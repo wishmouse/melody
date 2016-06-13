@@ -7,11 +7,13 @@ var hbs = require('handlebars')
 var hbsfy = require('hbsfy')
 var superagent = require('superagent')
 var cookieParser = require('cookie-parser')
+var env = process.env.NODE_ENV || 'development'
+var passport = require('passport')
 
 
-var client_id = 'CLIENT_ID'; // Your client id
-var client_secret = 'CLIENT_SECRET'; // Your secret
-var redirect_uri = 'REDIRECT_URI'; // Your redirect uri
+var client_id = process.env.CLIENT_ID; // Your client id
+var client_secret = process.env.CLIENT_SECRET; // Your secret
+var redirect_uri = process.env.REDIRECT_URI; // Your redirect uri
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
@@ -30,6 +32,6 @@ app.post('/', function(req, res){
 })
 
 
-app.listen(3000, function(){
+app.listen(3030, function(){
   console.log("singing a little ditty on .... 3000")
 })
