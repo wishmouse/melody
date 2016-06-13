@@ -4,7 +4,9 @@
   "description": "send a melody by email",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon ./bin/www",
+    "watch": "watchify -t hbsfy ./index.js -o ./bundle.js -dv",
+    "build": "browserify -t hbsfy ./index.js -o ./bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,11 +20,13 @@
   },
   "homepage": "https://github.com/wishmouse/melody#readme",
   "dependencies": {
+    "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^2.0.0",
     "express": "^4.13.4",
     "hbs": "^4.0.0",
     "hbsfy": "^2.7.0",
     "jquery": "^2.2.4"
-
   },
   "devDependencies": {
     "browserify": "^13.0.1",

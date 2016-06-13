@@ -1,6 +1,18 @@
 Main.hbs
+<link rel='stylesheet' href='./style.css' />
 
-<form>
-  <input type="text" name="song" placeholder="search a song">
-  <input type="submit" value="Search">
-</form>
+
+<div id="search">
+    <h1>Search for a song</h1>
+    <p>Type a song name and click on "Search"</p>
+
+    <form id="search-form">
+        <input type="text" id="query" value="" name="song" class="song" placeholder="Type an song "/>
+        <input type="submit" id="search" class="button" value="songSearch" />
+    </form>
+</div>
+
+
+
+
+<script src="./bundle.js"></script>
