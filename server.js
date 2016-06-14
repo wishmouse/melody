@@ -10,7 +10,6 @@ var cookieParser = require('cookie-parser')
 var env = process.env.NODE_ENV || 'development'
 var passport = require('passport')
 
-
 var client_id = process.env.CLIENT_ID; // Your client id
 var client_secret = process.env.CLIENT_SECRET; // Your secret
 var redirect_uri = process.env.REDIRECT_URI; // Your redirect uri
@@ -27,8 +26,9 @@ app.get('/', function(req, res){
   res.render('main')
 })
 
-app.post('/', function(req, res){
-  res.render('main')
+app.post('/song', function(req, res){
+
+  res.render('song')
 })
 
 
