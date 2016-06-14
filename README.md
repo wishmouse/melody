@@ -1,6 +1,10 @@
 # melody
 Sending a link to a  song by email
 
+#start
+nodemon
+npm run watch
+
 ## Learning Objectives
 - API
 - Databses
