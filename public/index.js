@@ -1,5 +1,5 @@
 var $ = require('jquery')
-var superagent = require('superagent')
+var request = require('superagent')
 var search = require('../views/main.hbs')
 var songs = require('../views/songs.hbs')
 
@@ -10,11 +10,10 @@ $(document).ready(function(){
           var track = $('#search-form input[name=song]').val().replace(/ /g,"%20")
           console.log("track :", track)
       request
-      .post('/songs')
+      .get('/songs')
       .send({track:track})
-      .end(function(err, res){
-        console.log("res.body: ", res.body)
+      
       })
-  })
+      })
 })
 // end of document ready function

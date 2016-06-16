@@ -26,8 +26,10 @@ app.get('/', function(req, res){
   res.render('main')
 })
 
-app.post('/song', function(req, res){
-
+app.get('/songs', function(req, res){
+  console.log(anything)
+  console.log("req.body: ", req.body)
+  console.log("res.body: ", res.body)
   res.render('song')
 })
 
