@@ -11,9 +11,9 @@ $(document).ready(function(){
           console.log("track :", track)
       request
       .get('/songs')
-      .send({track:track})
-      
+      .send({request:track})  //trying this out.
+      .end(function(err, res){
       })
-      })
+  })
 })
 // end of document ready function
