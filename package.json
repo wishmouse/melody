@@ -28,6 +28,7 @@
     "hbsfy": "^2.7.0",
     "jquery": "^2.2.4",
     "passport": "^0.3.2",
+    "spotify-web-api-node": "^2.3.0",
     "superagent": "^2.0.0"
   },
   "devDependencies": {

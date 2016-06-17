@@ -8,15 +8,22 @@ var hbs = require('handlebars')
 var hbsfy = require('hbsfy')
 var request = require('superagent')
 var cookieParser = require('cookie-parser')
+var SpotifyWebApi = require('spotify-web-api-node')
 var env = process.env.NODE_ENV || 'development'
 require('dotenv').config()
 
 var passport = require('passport')
 
-var client_id = process.env.CLIENT_ID; // Your client id
-var client_secret = process.env.CLIENT_SECRET; // Your secret
-var redirect_uri = process.env.REDIRECT_URI; // Your redirect uri
+var spotifyApi = new SpotifyWebApi({
+  clientId : process.env.CLIENT_ID,
+  clientSecret : process.env.CLIENT_SECRET,
+  redirectUri : process.env.REDIRECT_URI
+});
 
+// var client_id = ; // Your client id
+// var client_secret = ; // Your secret
+// var redirect_uri = ; // Your redirect uri
+//
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
@@ -33,8 +40,8 @@ app.post('/', function(req, res){
   var searchTrack = req.body.search
     console.log("searchTrack :", searchTrack)
 
-  request.get('https://api.spotify.com/v1/search?='+ searchTrack, function(req, res){
-    console.log('res.body: ', res.body)
+  request.get('https://api.spotify.com/v1/search?q='+ searchTrack +'&type=track', function(req, res){
+    console.log('res.body: ', res.body.tracks.href)
   })
 })
 
