@@ -40,9 +40,15 @@ app.post('/', function(req, res){
   var searchTrack = req.body.search
     console.log("searchTrack :", searchTrack)
 
-  request.get('https://api.spotify.com/v1/search?q='+ searchTrack +'&type=track', function(req, res){
-    console.log('res.body: ', res.body.tracks.href)
+  request
+    .get('https://api.spotify.com/v1/search?q='+ searchTrack +'&type=track', function(req, res){
+    var query = res.body.tracks.items[0]
+    var link = query.album.external_urls.spotify
+    var imageSmall = query.album.images[2]
+    var imageLarge = query.album.images[0]
+    var songName = query.name
   })
+ res.json('songs')
 })
 
 
