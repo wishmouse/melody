@@ -3,11 +3,14 @@ var app = express()
 var path = require('path')
 var bodyParser = require('body-parser')
 var dotenv = require('dotenv')
+dotenv.load()
 var hbs = require('handlebars')
 var hbsfy = require('hbsfy')
-var superagent = require('superagent')
+var request = require('superagent')
 var cookieParser = require('cookie-parser')
 var env = process.env.NODE_ENV || 'development'
+require('dotenv').config()
+
 var passport = require('passport')
 
 var client_id = process.env.CLIENT_ID; // Your client id
@@ -26,14 +29,16 @@ app.get('/', function(req, res){
   res.render('main')
 })
 
-app.get('/songs', function(req, res){
-  console.log(anything)
-  console.log("req.body: ", req.body)
-  console.log("res.body: ", res.body)
-  res.render('song')
+app.post('/', function(req, res){
+  var searchTrack = req.body.search
+    console.log("searchTrack :", searchTrack)
+
+  request.get('https://api.spotify.com/v1/search?='+ searchTrack, function(req, res){
+    console.log('res.body: ', res.body)
+  })
 })
 
 
-app.listen(3030, function(){
+app.listen(3000, function(){
   console.log("singing a little ditty on .... 3000")
 })

@@ -8,11 +8,12 @@ $(document).ready(function(){
   $('#search').click(function(e){
       e.preventDefault()
           var track = $('#search-form input[name=song]').val().replace(/ /g,"%20")
-          console.log("track :", track)
+          console.log("track :",track)
       request
-      .get('/songs')
-      .send({request:track})  //trying this out.
+      .post('/')
+      .send({search: track})
       .end(function(err, res){
+
       })
   })
 })
