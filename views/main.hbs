@@ -1,12 +1,21 @@
-Main.hbs
 <link rel='stylesheet' href='./style.css' />
 
-<h1>Search for a song</h1>
-    <p>Type a song name and click on "Search"</p>
+Search for a song
+   <h1>Type a song name and click on "Search"</h1>
 
-    <form id="search-form" method="post">
+    <form id="search-form" method="post" action="./views/songs">
         <input type="text" id="query" value="" name="song" class="song" placeholder="Type an song "/>
         <input type="submit" id="search" class="button" value="songSearch" />
     </form>
+  here are five songs... go wild
+
+    {{#each data}}
+
+      {{songName}}
+      {{link}}
+      {{imageSmall}}
+
+    {{/each}}
+
 
 <script src="./bundle.js"></script>

@@ -20,17 +20,11 @@ var spotifyApi = new SpotifyWebApi({
   redirectUri : process.env.REDIRECT_URI
 });
 
-// var client_id = ; // Your client id
-// var client_secret = ; // Your secret
-// var redirect_uri = ; // Your redirect uri
-//
-app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
-
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(cookieParser())
 
 app.get('/', function(req, res){
   res.render('main')
@@ -39,17 +33,19 @@ app.get('/', function(req, res){
 app.post('/', function(req, res){
   var searchTrack = req.body.search
     console.log("searchTrack :", searchTrack)
-
   request
-    .get('https://api.spotify.com/v1/search?q='+ searchTrack +'&type=track', function(req, res){
-    var query = res.body.tracks.items[0]
-    var link = query.album.external_urls.spotify
-    var imageSmall = query.album.images[2]
-    var imageLarge = query.album.images[0]
-    var songName = query.name
+    .get('https://api.spotify.com/v1/search?q='+ searchTrack +'&type=track')
+    .then(function(data){
+      var query = data.body.tracks.items[0].album
+      var link = query.external_urls.spotify
+      var imageSmall = query.images[2]
+      var imageLarge = query.images[0]
+      var songName = query.name
+    console.log ("this is songName:",  songName)
+  res.redirect('/songs', {songName: songName})
   })
- res.json('songs')
 })
+
 
 
 app.listen(3000, function(){
