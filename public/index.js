@@ -13,7 +13,7 @@ $(document).ready(function(){
       .post('/')
       .send({search: track})
       .end(function(err, res){
-        console.log("error", err)
+        console.log("error: ", err)
       })
   })
 })

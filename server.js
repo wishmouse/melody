@@ -41,11 +41,10 @@ app.post('/', function(req, res){
       var imageSmall = query.images[2]
       var imageLarge = query.images[0]
       var songName = query.name
-    console.log ("this is songName:",  songName)
-  res.redirect('/songs', {songName: songName})
+      console.log("this is query: ", query)
+  res.render('songs', {data: link})
   })
 })
-
 
 
 app.listen(3000, function(){
