@@ -41,8 +41,8 @@ app.post('/', function(req, res){
       var imageSmall = query.images[2]
       var imageLarge = query.images[0]
       var songName = query.name
-      console.log("this is query: ", query)
-  res.render('songs', {data: link})
+      // console.log("this is query: ", query)
+  res.json('songs', {data: query})
   })
 })
 

@@ -4,11 +4,15 @@ songs.hbs
 <h1>here are five songs... go wild</h1>
 
 {{#each data}}
-
-  {{songName}}
+{{this.album_type}}
+{{this.songName}}
+{{this.name}}
+{{this.link}}
+{{this.imageSmall}}
+  <!-- {{songName}}
   {{link}}
-  {{imageSmall}}
-  {{album_type}} -album type
+  {{imageSmall}} -->
+  {{this.album_type}} -album type
 
 {{/each}}
 
