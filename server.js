@@ -41,8 +41,8 @@ app.post('/', function(req, res){
       var imageSmall = query.images[2]
       var imageLarge = query.images[0]
       var songName = query.name
-      // console.log("this is query: ", query)
-  res.json('songs', {data: query})
+      console.log("this is songName: ", songName)
+  res.json(data)
   })
 })
 
@@ -50,3 +50,5 @@ app.post('/', function(req, res){
 app.listen(3000, function(){
   console.log("singing a little ditty on .... 3000")
 })
+
+module.exports = app;

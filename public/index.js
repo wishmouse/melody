@@ -13,6 +13,8 @@ $(document).ready(function(){
       .post('/')
       .send({search: track})
       .end(function(err, res){
+        // var query = data.body.tracks.items[0].album
+        console.log("this response.text: ", res.text.req)
         console.log("error: ", err)
       })
   })
