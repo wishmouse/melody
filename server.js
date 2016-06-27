@@ -42,7 +42,7 @@ app.post('/', function(req, res){
       var imageLarge = query.images[0]
       var songName = query.name
       console.log("this is songName: ", songName)
-  res.json(data)
+  res.json(query)
   })
 })
 

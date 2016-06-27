@@ -12,10 +12,18 @@ $(document).ready(function(){
       request
       .post('/')
       .send({search: track})
-      .end(function(err, res){
-        // var query = data.body.tracks.items[0].album
-        console.log("this response.text: ", res.text.req)
-        console.log("error: ", err)
+      .end(function(err, response){
+        //if statement for error/ response
+        var query = JSON.parse(response.text)
+        var link = query.external_urls.spotify
+        var imageSmall = query.images[2]
+        var imageLarge = query.images[0]
+        var songName = query.name
+        console.log("this is query: ", query)
+        console.log("name :", songName)
+        console.log("link :", link)
+        $('body').append("<p>" + songName +"</p>")
+        //jquery or js  append to the page
       })
   })
 })
