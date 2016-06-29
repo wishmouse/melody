@@ -17,37 +17,35 @@ $(document).ready(function(){
         var linkOne = query.items[0].external_urls.spotify
         var imageSmallOne = query.items[0].album.images[1].url
         var songNameOne = query.items[0].name
-        console.log("songNameOne :", songNameOne)
         var previewOne = query.items[0].preview_url
 
         var linkTwo = query.items[1].external_urls.spotify
         var imageSmallTwo = query.items[1].album.images[1].url
         var songNameTwo = query.items[1].name
-        console.log("songNameTwo : ", songNameTwo)
         var previewTwo = query.items[1].preview_url
 
         var linkThree = query.items[2].external_urls.spotify
         var imageSmallThree = query.items[2].album.images[1].url
         var songNameThree = query.items[2].name
-        console.log("songNameThree", songNameThree)
         var previewThree = query.items[2].preview_url
 
         document.getElementById("songNameOne").innerHTML = songNameOne
         document.getElementById("linkOne").innerHTML = linkOne
-        $("body").append("<img src="+ imageSmallOne + " style='width:200;height:200'>")
-        $("body").append("<source src="+ previewOne + ">")
+        $("#resultsOne").append("<img src="+ imageSmallOne + " style='width:200;height:200'>")
+        $("#previewOne").append("<audio controls><source src="+ previewOne + " type= 'audio/mpeg'></audio>")
 
         document.getElementById("songNameTwo").innerHTML = songNameTwo
         document.getElementById("linkTwo").innerHTML = linkTwo
-        $("body").append("<img src="+ imageSmallTwo + " style='width:200;height:200'>")
-        $("body").append("<source src="+ previewTwo + ">")
+        $("#resultsTwo").append("<img src="+ imageSmallTwo + " style='width:200;height:200'>")
+        $("#previewTwo").append("<audio controls><source src="+ previewTwo + " type= 'audio/mpeg'></audio>")
 
         document.getElementById("songNameThree").innerHTML = songNameThree
         document.getElementById("linkThree").innerHTML = linkThree
-        $("body").append("<img src="+ imageSmallThree + " style='width:200;height:200'>")
-        $("body").append("<source src="+ previewThree + ">")
+        $("#resultsThree").append("<img src="+ imageSmallThree + " style='width:200;height:200'>")
+        $("#previewThree").append("<audio controls><source src="+ previewThree + " type= 'audio/mpeg'></audio>")
         // document.getElementById("preview").innerHTML = preview
       })
   })
 })
 // end of document ready function
+// $("#results").append("<div class='posters'><h3> " + movies[i].title + "</h3><br>" + "<img src='https://image.tmdb.org/t/p/w185/" + movies[i].poster_path +"'> <br></div>")
