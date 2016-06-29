@@ -16,14 +16,14 @@ $(document).ready(function(){
         //if statement for error/ response
         var query = JSON.parse(response.text)
         var link = query.external_urls.spotify
-        var imageSmall = query.images[2]
-        var imageLarge = query.images[0]
+        var imageSmall = query.images[1].url
+        var imageLarge = query.images[0].url
         var songName = query.name
-        console.log("this is query: ", query)
-        console.log("name :", songName)
-        console.log("link :", link)
-        $('body').append("<p>" + songName +"</p>")
-        //jquery or js  append to the page
+        console.log("imageSmall", imageSmall)
+        document.getElementById("songName").innerHTML = songName
+        document.getElementById("link").innerHTML = link
+        $("body").append("<img src="+ imageSmall + ">")
+
       })
   })
 })

@@ -1,6 +1,4 @@
 <link rel='stylesheet' href='./style.css' />
-
-Search for a song
    <h1>Type a song name and click on "Search"</h1>
 
     <form id="search-form" method="post" action="/songs">
@@ -9,12 +7,9 @@ Search for a song
     </form>
   here are five songs... go wild
 
-    {{#each data}}
-      {{this.album_type}}
-      {{this.songName}}
-      {{this.link}}
-      {{this.imageSmall}}
-    {{/each}}
+  <p id='songName'></p>
+  <p id='link'></p>
 
+  <div class="imageSmall" id="imageSmall"></div>
 
 <script src="./bundle.js"></script>
