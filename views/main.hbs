@@ -1,18 +1,41 @@
 <link rel='stylesheet' href='./style.css' />
-   <h1>Type a song name and click on "Search"</h1>
+   <h3>Type a song name and click on "Search"</h3>
 
     <form id="search-form" method="post" action="/songs">
         <input type="text" id="query" value="" name="song" class="song" placeholder="Type an song "/>
         <input type="submit" id="search" class="button" value="songSearch" />
     </form>
 
-  <p id='songName'></p>
-  <p id='link'></p>
+  <p id='songNameOne'></p>
+  <p id='linkOne'></p>
 
   <audio controls>
-    <source class="preview" id="preview" type="audio/mpeg">
+    <source src="preview.ogg" type="audio/ogg">
+    <source src="preview.mp3" type="audio/mpeg">
   </audio>
 
-  <div class="imageSmall" id="imageSmall"></div>
+  <div class="imageSmallOne" id="imageSmallOne"></div>
+**********************************************************
+  <p id='songNameTwo'></p>
+  <p id='linkTwo'></p>
+
+  <audio controls>
+    <source src="preview.ogg" type="audio/ogg">
+    <source src="preview.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="imageSmallTwo" id="imageSmallTwo"></div>
+
+**********************************************************
+<p id='songNameThree'></p>
+<p id='linkThree'></p>
+
+<audio controls>
+  <source src="preview.ogg" type="audio/ogg">
+  <source src="preview.mp3" type="audio/mpeg">
+</audio>
+
+<div class="imageSmallThree" id="imageSmallThree"></div>
+
 
 <script src="./bundle.js"></script>
