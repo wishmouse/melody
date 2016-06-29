@@ -36,13 +36,18 @@ app.post('/', function(req, res){
     console.log("searchTrack :", searchTrack)
   request
     .get('https://api.spotify.com/v1/search?q='+ searchTrack +'&type=track')
+    // .get('https://api.spotify.com/v1/search?q='+ searchTrack + ',' + searchTrack +'&type=track')
+
+    .set('Accept', 'application/json')
     .then(function(data){
-      var query = data.body.tracks.items[0].album
-      var link = query.external_urls.spotify
-      var imageSmall = query.images[2]
-      var imageLarge = query.images[0]
-      var songName = query.name
-      console.log("this is songName: ", songName)
+
+      var query = data.body.tracks.items[0]
+      // var query = data.body.tracks.items[0].album
+      // var imageSmall = query.images[2]
+      // var imageLarge = query.images[0]
+      // // var songName = query.items[0].name
+      // var songName = query.name
+    console.log("this is data.body.tracks:", query.name)
   res.json(query)
   })
 })

@@ -8,7 +8,6 @@ $(document).ready(function(){
   $('#search').click(function(e){
       e.preventDefault()
           var track = $('#search-form input[name=song]').val().replace(/ /g,"%20")
-          console.log("track :",track)
       request
       .post('/')
       .send({search: track})
@@ -16,14 +15,15 @@ $(document).ready(function(){
         //if statement for error/ response
         var query = JSON.parse(response.text)
         var link = query.external_urls.spotify
-        var imageSmall = query.images[1].url
-        var imageLarge = query.images[0].url
+        var imageSmall = query.album.images[1].url
+        var imageLarge = query.album.images[0].url
         var songName = query.name
-        console.log("imageSmall", imageSmall)
+        var preview = query.preview_url
         document.getElementById("songName").innerHTML = songName
         document.getElementById("link").innerHTML = link
         $("body").append("<img src="+ imageSmall + ">")
-
+        $("body").append("<source src="+ preview + ">")
+        // document.getElementById("preview").innerHTML = preview
       })
   })
 })
