@@ -1,7 +1,7 @@
 var $ = require('jquery')
 var request = require('superagent')
 var search = require('../views/main.hbs')
-var songs = require('../views/songs.hbs')
+// var songs = require('../views/songs.hbs')
 
 $(document).ready(function(){
 

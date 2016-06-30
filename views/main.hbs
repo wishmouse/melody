@@ -1,35 +1,63 @@
-<link rel='stylesheet' href='./style.css' />
-   <h3>Type a song name and click on "Search"</h3>
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel='stylesheet' href='./style.css' />
+    <Title>MixTape</title>
+</head>
+<body>
 
-    <form id="search-form" method="post" action="/songs">
-        <input type="text" id="query" value="" name="song" class="song" placeholder="Type an song "/>
-        <input type="submit" id="search" class="button" value="songSearch" />
-    </form>
+   <div class="container">
+    <div class="row">
+      <div class="one-half column">
+        <h3>Remeber the 80's, send a mixtape.</h3><p>click the image to send</p>
+       </div>
+      <div class="one-half column">
+        <br>
 
-<div id= songOne >
-  <!-- <a href="mailto:someone@example.com?Subject=A%20message%20from%20MixTape" target="_top"> -->
-  <p id='songNameOne'></p>
-  <div id='linkOne'></div>
-  <div id='resultsOne'></div>
-  <div id='previewOne'></div>
-  <div class="imageSmallOne" id="imageSmallOne"></div>
-<!-- </a> -->
+       <form id="search-form" method="post" action="/songs">
+           <input type="text" id="query" value="" name="song" class="song" placeholder="Type an song "/>
+           <input type="submit" id="search" class="button" value="Search" />
+       </form>
+     </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="one-third column">
+        <div id= songOne >
+          <p id='songNameOne'></p>
+          <div hidden id='linkOne'></div>
+          <a href="mailto:?Subject=You%20have%20been%20sent%20a%20MixTape&body" method="post">
+          <div id='resultsOne'></div></a>
+          <div id='previewOne'></div>
+          <div class="imageSmallOne" id="imageSmallOne"></div>
+        </div>
+      </div>
+
+    <div class="one-third column">
+      <div id= songTwo >
+        <p id='songNameTwo'></p>
+        <p hidden id='linkTwo'></p>
+        <a href="mailto:?Subject=You%20have%20been%20sent%20a%20MixTape">
+        <div id='resultsTwo'></div></a>
+        <div id='previewTwo'></div>
+        <div class="imageSmallTwo" id="imageSmallTwo"></div>
+      </div>
+    </div>
+
+    <div class="one-third column">
+      <div id= songThree >
+        <p id='songNameThree'></p>
+        <p hidden id='linkThree'></p>
+        <a href="mailto:?Subject=You%20have%20been%20sent%20a%20MixTape">
+        <div id='resultsThree'></div></a>
+        <div id='previewThree'></div>
+        <div class="imageSmallThree" id="imageSmallThree"></div>
+      </div>
+    </div>
+  </div>
 </div>
-**********************************************************
-  <p id='songNameTwo'></p>
-  <p id='linkTwo'></p>
-  <div id='resultsTwo'></div>
-  <div id='previewTwo'></div>
 
-  <div class="imageSmallTwo" id="imageSmallTwo"></div>
-
-**********************************************************
-  <p id='songNameThree'></p>
-  <p id='linkThree'></p>
-  <div id='resultsThree'></div>
-  <div id='previewThree'></div>
-
-<div class="imageSmallThree" id="imageSmallThree"></div>
-
-
+</body>
+</html>
 <script src="./bundle.js"></script>
