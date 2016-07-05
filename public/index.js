@@ -31,21 +31,23 @@ $(document).ready(function(){
 
         document.getElementById("songNameOne").innerHTML = songNameOne
         document.getElementById("linkOne").innerHTML = linkOne
-        $("#resultsOne").append("<img src="+ imageSmallOne + " style='width:200;height:200'>")
+        $("#resultsOne").append("<img src="+ imageSmallOne + ">")
         $("#previewOne").append("<audio controls><source src="+ previewOne + " type= 'audio/mpeg'></audio>")
+
 
         document.getElementById("songNameTwo").innerHTML = songNameTwo
         document.getElementById("linkTwo").innerHTML = linkTwo
-        $("#resultsTwo").append("<img src="+ imageSmallTwo + " style='width:200;height:200'>")
+        $("#resultsTwo").append("<img src="+ imageSmallTwo + ">")
         $("#previewTwo").append("<audio controls><source src="+ previewTwo + " type= 'audio/mpeg'></audio>")
 
         document.getElementById("songNameThree").innerHTML = songNameThree
         document.getElementById("linkThree").innerHTML = linkThree
-        $("#resultsThree").append("<img src="+ imageSmallThree + " style='width:200;height:200'>")
+        $("#resultsThree").append("<img src="+ imageSmallThree + ">")
         $("#previewThree").append("<audio controls><source src="+ previewThree + " type= 'audio/mpeg'></audio>")
-        // document.getElementById("preview").innerHTML = preview
+        console.log("this is linkONe", linkOne)
       })
   })
+
 })
 // end of document ready function
 // $("#results").append("<div class='posters'><h3> " + movies[i].title + "</h3><br>" + "<img src='https://image.tmdb.org/t/p/w185/" + movies[i].poster_path +"'> <br></div>")

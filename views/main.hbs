@@ -14,7 +14,6 @@
        </div>
       <div class="one-half column">
         <br>
-
        <form id="search-form" method="post" action="/songs">
            <input type="text" id="query" value="" name="song" class="song" placeholder="Type an song "/>
            <input type="submit" id="search" class="button" value="Search" />
@@ -22,17 +21,19 @@
      </div>
     </div>
     <br>
+    <!-- href="mailto:?Subject=You%20have%20been%20sent%20a%20MixTape&body=Hello,%0D%0A%0D%0AHere%20is%20the%20link%20to%20your%20ditty%20of%20the%20day.%0D%0A%0D%0AClick%20the%20following%20link%20" -->
     <div class="row">
       <div class="one-third column">
         <div id= songOne >
-          <p id='songNameOne'></p>
-            <a href="mailto:?Subject=You%20have%20been%20sent%20a%20MixTape&body=Hello,%0D%0A%0D%0AHere is the link to the to your ditty of the day.%0D%0A%0D%0AClick the following link:">
-            <div class="imageSmallOne" id="imageSmallOne"></div>
-          <div hidden id='linkOne'></div>
-          <div id='resultsOne'></div></a>
+          <div id='songNameOne'></div>
+            <div onclick="sendEmail();">
+              <div class="imageSmallOne" id="imageSmallOne"></div>
+              <div hidden id='linkOne'></div>
+              <div id='resultsOne'></div>
+            </div>
           <div id='previewOne'></div>
-        </div>
       </div>
+    </div>
 
     <div class="one-third column">
       <div id= songTwo >
@@ -61,3 +62,9 @@
 </body>
 </html>
 <script src="./bundle.js"></script>
+<script type="text/javascript">
+  function sendEmail() {
+    var link = 'mailto:hello@domain.com?subject=Message&body='+linkOne +'here is your link'
+    window.location.href = link;
+}
+</script>

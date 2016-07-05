@@ -39,7 +39,6 @@ app.post('/', function(req, res){
     .set('Accept', 'application/json')
     .then(function(data){
       var query = data.body.tracks
-    // console.log("this query:", query.items[0].album)
   res.json(query)
   })
 })
